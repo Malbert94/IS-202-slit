@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.2719298245614035" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitclient.view.studentController">
+  <items>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="309.0" SplitPane.resizableWithParent="false">
+         <children>
+            <Label layoutX="74.0" layoutY="14.0" text="Fornavn">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="299.0" text="Informasjon fra foreleser:" />
+            <TextArea layoutX="28.0" layoutY="334.0" prefHeight="194.0" prefWidth="181.0" text="Neste forelesesning er&#10;onsdag kl 9.15" />
+            <Hyperlink layoutX="84.0" layoutY="550.0" text="www.uia.no" />
+            <ImageView fitHeight="194.0" fitWidth="152.0" layoutX="47.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@javabok.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="98.0" layoutY="264.0" text="IS-109">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TabPane prefHeight="598.0" prefWidth="522.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Hjem">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="forsideTableView" layoutX="17.0" layoutY="24.0" prefHeight="311.0" prefWidth="528.0">
+                          <columns>
+                            <TableColumn fx:id="columnModul" prefWidth="75.0" text="Modul" />
+                            <TableColumn fx:id="columnFrist" prefWidth="118.0" text="Frist" />
+                              <TableColumn fx:id="columnStatus" prefWidth="82.0" text="Status" />
+                              <TableColumn fx:id="columnVurdering" prefWidth="116.0" text="Vurdering" />
+                              <TableColumn fx:id="columnInnhold" prefWidth="136.0" text="Innhold" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content></Tab>
+          <Tab text="Modul 1">
+               <content>
+                  <TitledPane prefHeight="426.0" prefWidth="621.0">
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu></TextArea>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <Pane prefHeight="98.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="textAreaInnhold" layoutY="8.0" prefHeight="88.0" prefWidth="515.0" />
+                           </children>
+                        </Pane>
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 2">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;14 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 2 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 3">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 4">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 5">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 6">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 7">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 8">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 9">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+            <Tab text="Modul 10">
+               <content>
+                  <TitledPane>
+                     <content>
+                        <GridPane prefHeight="216.0" prefWidth="113.0">
+                           <children>
+                              <Label text="Modul" />
+                              <Label text="Frist" GridPane.columnIndex="2" />
+                              <Label text="Lever" GridPane.columnIndex="1" />
+                              <Label text="Kommentar" GridPane.columnIndex="3" />
+                              <Label prefHeight="87.0" prefWidth="109.0" text="Status" GridPane.columnIndex="4" />
+                              <Label text="Levert" GridPane.columnIndex="5" />
+                              <SplitMenuButton mnemonicParsing="false" text="Lever" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Velg fil" />
+                                 </items>
+                              </SplitMenuButton>
+                              <CheckBox mnemonicParsing="false" text="Godkjent" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <DatePicker GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                              <Hyperlink text="Hyperlink" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Veldig bra&#10;Men til neste&#10;gang gjør&#10;ditt og datt" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="Fristen for &#10;innlevering er&#10;1 sep " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="83.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" maxHeight="285.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="490.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <graphic>
+                        <TextArea prefHeight="101.0" prefWidth="553.0" text="I modul 1 skal du gjøre ditt og datt, for mer informasjon ved følg linken under modul eller spør&#10;oss om veileding under forelseninger&#10;&#10;&#10;&#10;" />
+                     </graphic>
+                  </TitledPane>
+               </content>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </items>
+</SplitPane>
